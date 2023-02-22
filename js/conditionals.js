@@ -25,7 +25,6 @@
 function analyzeColor(colorName){
     if(colorName === "blue"){
         return("The sky is always blue");
-
     }
 
     else if(colorName === "red"){
@@ -52,22 +51,22 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-// console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-// // let colorName = prompt("What is your favorite color?");
-// // switch (colorName){
-// //     case "red":
-// //         console.log("Apples are red");
-// //         break;
-// //     case "orange":
-// //         console.log("Orange is my favorite color");
-// //         break;
-// //     default:
-// //         console.log(colorName + " isn't my favorite color, but lets agree to disagree" );
-// }
+let colorName = prompt("What is your favorite color?");
+switch (colorName){
+    case "red":
+        console.log("Apples are red");
+        break;
+    case "orange":
+        console.log("Orange is my favorite color");
+        break;
+    default:
+        console.log(colorName + " isn't my favorite color, but lets agree to disagree" );
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -76,9 +75,9 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 /* ########################################################################## */
-// let UserColor = prompt("Insert your favorite color?");
-//
-// alert(analyzeColor(UserColor));
+let UserColor = prompt("Insert your favorite color?");
+
+alert(analyzeColor(UserColor));
 
 
 
@@ -106,27 +105,22 @@ function calculateTotal(luckyNum,amount){
 
     if(luckyNum === 0){
         return("No Discount");
-
     }
 
     else if(luckyNum === 1){
         return(amount - (0.10 * amount)).toFixed(2);
-
     }
 
     else if(luckyNum === 2){
         return(amount - (0.25 * amount)).toFixed(2);
-
     }
 
     else if(luckyNum === 3){
         return(amount - (0.35 * amount)).toFixed(2);
-
     }
 
     else if(luckyNum === 4){
         return(amount - (0.50 * amount)).toFixed(2);
-
     }
 
     else{
@@ -146,11 +140,11 @@ console.log(calculateTotal(5,250));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// let luckyNumber = Math.floor(Math.random() * 6);
-//
-// let TotalBill = Number(prompt("What is your total Bill?")).toFixed(2);
-//
-// alert("Your Lucky Number is " + luckyNumber + ",  Price before discount" + " $" + TotalBill + ", Discounted Price " + calculateTotal(luckyNumber,TotalBill));
+let luckyNumber = Math.floor(Math.random() * 6);
+
+let TotalBill = Number(prompt("What is your total Bill?")).toFixed(2);
+
+alert("Your Lucky Number is " + luckyNumber + ",  Price before discount" + " $" + TotalBill + ", Discounted Price " + calculateTotal(luckyNumber,TotalBill));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -174,9 +168,7 @@ let isConfirm = confirm("Would you like to enter a random number?");
 if(isConfirm){
     let UserInput = Number(prompt("Enter the number"));
     displayNum(UserInput);
-
 }
-
 function displayNum(UserInput){
     if(isNaN(UserInput)){
         alert("This is an incorrect input");
