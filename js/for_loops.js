@@ -22,3 +22,23 @@ for (let i = 0; i <= 10; i++ ){
     }
 }
 
+// Create a for loop that uses console.log to create the output shown below.
+
+let Num = 9;
+let Str = "";
+
+for(let i = 1; i <= Num; i++){
+
+    for(let j = 1; j <= i; j++){
+        Str += i;
+    }
+    Str += "\n";
+}
+
+console.log(Str);
+
+
+
+
+
+
