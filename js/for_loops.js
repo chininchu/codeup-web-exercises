@@ -1,7 +1,8 @@
 // Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
 function showMultiplicationTable(Numb){
     for(let i = 1; i <= 10; i++){
-        console.log(Numb * i);
+        let sum = Numb * i;
+        console.log(Numb + " * " + i + " = " + sum);
     }
 
 }
@@ -28,14 +29,21 @@ let Num = 9;
 let Str = "";
 
 for(let i = 1; i <= Num; i++){
-
-    for(let j = 1; j <= i; j++){
-        Str += i;
-    }
-    Str += "\n";
+    Str = i.toString();
+    Str = Str.repeat(i);
+    console.log(Str);
 }
 
-console.log(Str);
+// Create a for loop that uses console.log to create the output shown below.
+for(let i = 100; i >= 5; i -= 5){
+    console.log(i);
+
+}
+
+
+
+
+
 
 
 
