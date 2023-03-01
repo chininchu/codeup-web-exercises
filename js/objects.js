@@ -97,6 +97,13 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    let books = [
+        {tittle: "Harry Potter", author: {firstName: "Jk", lastName: "Rowling"}},
+        {tittle: "All the Light We Cannot See ", author: {firstName: "Anthony", lastName: "Doerr"}},
+        {tittle: "The Night Circus", author: {firstName: "Erin", lastName: "Morgen"}},
+        {tittle: "Everything I never told you", author: {firstName: "Celeste", lastName: "NG"}},
+        {tittle: "Man Called Over", author: {firstName: "Fredrik", lastName: "Grady"}}];
+
 
     /**
      * TODO:
@@ -122,6 +129,11 @@
      *      ---
      *      ...
      */
+
+    for(let i = 1; i <= books.length; i++){
+        console.log("Book #" + i + "\nTittle: " + books[i].tittle + "\nAuthor: " + books[i].author.firstName + " " + books[i].author.lastName);
+    }
+
 
     /**
      * Bonus:
