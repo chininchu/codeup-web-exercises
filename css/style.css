@@ -2,7 +2,23 @@
 this file is named "site.css" and is in a directory named "css"
 */
 
-.fancy-header {
+h1 {
     color: purple;
+    text-align: center;
+
+}
+
+.fancy-header, h2{
+    color: magenta;
     text-decoration: underline;
 }
+
+body{
+    background-color: yellow ;
+
+
+}
+
+
+
+
