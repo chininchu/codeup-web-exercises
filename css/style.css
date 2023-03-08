@@ -2,23 +2,31 @@
 this file is named "site.css" and is in a directory named "css"
 */
 
-h1 {
+h1, p {
     color: purple;
     text-align: center;
-
 }
 
-.fancy-header, h2{
+.fancy-header, h2 {
     color: magenta;
     text-decoration: underline;
 }
 
-body{
-    background-color: yellow ;
+body {
+    background-color: yellow;
+    background-image: url("/img/neutral background.jpeg");
+    font-family: 'Oswald', sans-serif;
+}
 
-
+table, th, td {
+    table-layout: auto;
+    border: 5px solid;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
 }
 
 
-
+a:hover {
+    color: red;
+}
 
