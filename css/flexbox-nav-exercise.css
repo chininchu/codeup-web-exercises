@@ -22,6 +22,8 @@ ul {
     justify-content: center;
     flex-grow: 1;
     font-weight: bold;
+
+
     /* made unordered list a flex container */
 }
 
@@ -35,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-    background: blue;
+    color: blue;
 
 
 }
