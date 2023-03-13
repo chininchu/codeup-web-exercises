@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background: grey;
+    display: flex;
+
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    font-weight: bold;
+    /* made unordered list a flex container */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 0.5em; /* increases clickable area of anchor tags on all sides by 1em */
+
+}
+
+nav a:hover {
+    background: blue;
+
+
+}
+
+nav ul li:nth-child(5) {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: auto;
+
+
+    /*
+        this allows the last flex item to be right justified
+        by filling remaining space to the left of the flex item with margin
+    */
+
+}
+
+
+.material-symbols-outlined {
+
+
+    color: black;
+    font-variation-settings: 'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
