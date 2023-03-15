@@ -9,10 +9,11 @@
 }
 
 .jumbotron h2 {
-    width: 100%;
-    /*border: 1px solid white;*/
     background-color: white;
+    opacity: 0.75;
+    width: 100%;
+
 }
 
-/*Use Jumbotron Class */
+
 
