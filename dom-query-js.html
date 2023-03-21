@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<script>
+    (function () {
+        "use strict";
+        // TODO: Uncomment next line and get the main header element by id
+        let MainHeader = document.getElementById('main-header');
+        console.log(MainHeader);
+
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        MainHeader.innerHTML = 'JavaScript is Cool';
+        console.log(MainHeader);
+
+
+        // TODO: Uncomment the next line and get the sub header element by id
+        let subHeader = document.getElementById('sub-header');
+        console.log(subHeader);
+
+        // TODO: Set the text color of subHeader to blue
+        subHeader.style.color = 'blue';
+        console.log(subHeader);
+
+        // TODO: Uncomment the next line and get all list items
+        let listItems = document.getElementsByTagName('li');
+
+        for (let i = 0; i < listItems.length; i++) {
+            console.log(listItems[i]);
+
+        }
+
+        // TODO: Set text color on every other list item to grey
+
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].style.color = 'grey';
+            console.log(listItems[i]);
+
+        }
+
+
+        // TODO: Set text color of li with dbid = 1 to blue
+        listItems.item(0).style.color = 'blue';
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let SubParagraphs = document.getElementsByClassName('sub-paragraph');
+        console.log(SubParagraphs);
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+        for (let i = 0; SubParagraphs.length; i++) {
+
+            SubParagraphs[i].innerHTML = "Mission Accomplished!";
+            console.log(i);
+
+        }
+
+
+    })();
+</script>
+</body>
+</html>
