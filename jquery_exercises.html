@@ -9,13 +9,55 @@
 </head>
 <body>
 
+<h1 id="MainHeading">Welcome to Codeup!!</h1>
+
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur cum ea facere ipsum quas,
+    ut voluptates? Architecto assumenda atque cupiditate molestiae, necessitatibus numquam, quo repellendus
+    reprehenderit, ullam unde velit!</p>
+
+<ul>
+    <li>China</li>
+    <li>India</li>
+    <li>Australia</li>
+</ul>
 
 
-<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<div class="Paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem beatae fugit non possimus rem repellendus
+    reprehenderit tempore veniam. Alias consequatur dolorum et expedita natus possimus saepe sit ullam vitae?
+</div>
+
+<div id="Paragraph1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam corporis doloremque laudantium quasi.
+    Animi atque cum doloremque ea enim, fugit hic iure labore libero quae quis recusandae temporibus vel!
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"></script>
 <script>
-    $(function(){
-        alert('HTML has been loaded');
+    $('#MainHeading').click(function () {
+        $(this).css('background-color', '#0000FF');
+
     });
+
+
+    $('div,p').dblclick(function () {
+        $(this).css('font-size', '18px');
+
+    });
+
+    $('li').hover(function () {
+            $(this).css('color', 'red');
+
+        },
+        function () {
+            $(this).css('color', 'black');
+
+
+        })
+
+
 </script>
 </body>
 
