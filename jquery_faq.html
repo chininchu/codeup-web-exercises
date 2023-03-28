@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        * {
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<p class='MainHeading'>Frequently Asked Questions About the National Parks:</p>
+
+<dl>
+    <dt>Who Manages America’s National Parks?</dt>
+    <dd class='invisible'>The national parks are managed by the National Park Service (NPS), which also oversees
+        numerous national monuments, historic sites, memorials, historical parks, lakeshores and seashores. The National
+        Park Service itself is a bureau of the Department of the Interior (DOI).
+    </dd>
+
+    <dt>What Is a National Park?</dt>
+    <dd class='invisible'>The National Park Service defines “national parks” as follows: “Generally, a national park
+        contains a variety of resources and encompasses large land or water areas to help provide adequate protection of
+        the resources.”
+    </dd>
+
+    <dt>How Old Is America’s National Park System?</dt>
+    <dd class='invisible'>Officially, the National Park System dates from August 25, 1916, which is the day President
+        Woodrow Wilson created the National Park Service.
+
+    </dd>
+
+    <dt>How Many National Parks Are There?</dt>
+    <dd class='invisible'>National parks are just one of many designations in the National Park System. In total, there
+        are 423 National Park Service units..
+    </dd>
+
+    <dt>What Does the National Park Service Logo Mean?</dt>
+    <dd class='invisible'>The logo of the National Park Service represents the different aspects of America’s National
+        Park System.
+    </dd>
+
+    <dt>How Many People Visit America’s National Parks Every Year?</dt>
+    <dd class='invisible'>The most visited national park is Great Smoky Mountains National Park in North Carolina and
+        Tennessee, which welcomed 14.1 million visitors in 2021.
+    </dd>
+
+    <dt>What Is the Least Visited National Park?
+
+    </dt>
+    <dd class='invisible'>The least visited national park is Gates of the Arctic National Park and Preserve in Alaska.
+        No more than 7,362 people journeyed there in 2021.
+    </dd>
+
+    <dt>What Is the Oldest National Park?</dt>
+    <dd class='invisible'>The first national park ever established in the United States, and the entire world, is
+        Yellowstone National Park. It was created by President Ulysses S. Grant on March 1, 1872.
+    </dd>
+
+    <dt>What Is the Youngest National Park?
+
+    </dt>
+    <dd class='invisible'>The largest national park in America is Wrangell-St. Elias National Park and Preserve in
+        southeastern Alaska.
+    </dd>
+
+</dl>
+
+<a href="#" id="click">Click here!</a>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    $('#click').click(function (event) {
+
+        $('dd').toggleClass('invisible');
+
+    });
+
+
+</script>
+
+</body>
+</html>
