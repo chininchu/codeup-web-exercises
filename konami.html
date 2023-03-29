@@ -6,44 +6,40 @@
 <body>
 <h1>Konami Code</h1>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+
+
 <script>
     "use strict";
 
-    var Konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+    var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
 
-    var user = []
+    var user = [];
 
-    $(document).keyup(function (event) {
+    var counter = 0;
+
+    $(document).keyup(function(event) {
         console.log(event.keyCode);
-        user.push(event.keyCode)
+        user.push(event.keyCode);
 
-        if (user.length === Konami.length) {
+        if (konami[counter] !== user[counter]) {
+            alert('You have entered the wrong key');
+        }
 
-            for (let i = 0; i < Konami.length - 10; i++) {
-
-
-                if (user[i].length === Konami[i].length) {
-
-                    alert("You have added 30 lives!")
-
-
-                }
-            }
-
+        else if (konami[konami.length - 1] === user[konami.length - 1]) {
+            alert('You have added 30 lives!');
 
         }
 
-    });
+        else {
+            counter++;
 
-    /*
-    1. On Keyup the system stores user value to a number array
-    2. Use a for loop to iteriate over the araay
-    3. Create an if statement within the event listener that will determine the correct keystrokes match the corresponding value
-    4. Display an alert when the users clicks enter
-    * */
+        }
+
+
+    });
 
 
 </script>
