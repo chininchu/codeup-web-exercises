@@ -12,11 +12,6 @@
             visibility: hidden;
         }
 
-        * {
-            font-weight: bold;
-
-        }
-
 
     </style>
 
@@ -80,7 +75,10 @@
 
 </dl>
 
-<h3>Yosemite National Park</h3>
+<a href="#" id="click">Click here!</a>
+
+
+<h3 class="Heading-1">Yosemite National Park</h3>
 <ul id="park-1">
     <li>Yosemite might be our nation’s 3rd national park, but it sparked the idea of national parks</li>
     <li>Yosemite’s granite rock formations glow like fire at sunset</li>
@@ -90,7 +88,7 @@
 
 </ul>
 
-<h3>Yellowstone National Park</h3>
+<h3 class="Heading-2">Yellowstone National Park</h3>
 
 <ul id="park-2">
     <li>Yellowstone encompasses 3,472 square miles (2,221,766 acres)</li>
@@ -100,7 +98,7 @@
 
 </ul>
 
-<h3>Glacier National Park</h3>
+<h3 class="Heading-3">Glacier National Park</h3>
 
 <ul id="park-3">
     <li>Glacier National Park is a part of the world’s first international peace park</li>
@@ -110,9 +108,6 @@
 </ul>
 
 <button id="button" type="button">Interesting Fact</button>
-
-
-<a href="#" id="click">Click here!</a>
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -129,11 +124,22 @@
 
     $('#button').click(function () {
 
-
-        $('#park-1,#park-2,#park-3').children().last().css('background-color', 'yellow');
-
-
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow');
+        })
     });
+
+
+    $('h3').click(function () {
+        $('h3').next().css('font-weight', 'bold');
+
+
+    })
+
+    $('li').click(function () {
+        $(this).parent().children().first().css('color', 'blue');
+
+    })
 
 
 </script>
