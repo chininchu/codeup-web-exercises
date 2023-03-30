@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS -->
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<label for="search">Enter an Address:</label>
+<input type="search" id="search" name="search">
+
+<button id="button">Search</button>
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+
+<!-- Custom JS -->
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+
+    "use strict";
+
+
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    let map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        zoom: 10, // starting zoom
+        center: [-98.4916, 29.4252] // [lng, lat]
+    });
+
+    //grab the button to say when button is clicked then do xyz
+    $('#button').click(function () {
+        //once button is clicked, I am grabbing my input field that has my searched results and storing it for later use
+        let address = $('#search').val();
+
+        //I am grabbing the longlat of my search by using my geocoder, that returns a promise with the longlat
+        //when I pass in my searched value
+        let newCords = geocode(address, mapboxgl.accessToken);
+
+        //I grab longlat nested within promise by using the .then() method
+        newCords.then(function (results) {
+            //once I get back longlat, I then pass the longlat in a format that satisfies my setCenter function
+            map.setCenter([results[0], results[1]])
+
+
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>
