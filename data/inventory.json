@@ -30,5 +30,35 @@
             "tool"
         ],
         "price": 10
+    },
+
+    {
+        "title": "Nails",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    },
+
+
+    {
+        "title": "Saw",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    },
+
+    {
+        "title": "Battery Pack",
+        "quantity": 30,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
     }
+
+
 ]
