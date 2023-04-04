@@ -25,9 +25,23 @@
 
 </head>
 <body>
-<p id="weather"></p>
+<!--<div class="container">-->
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <a class="navbar-brand" href="#">Current City: Dallas,TX</a>
+    </div>
+
+
+</nav>
+
+
+<p id="weather" class="card flex-row justify-content-between align-items-center mt-auto"></p>
+
+
+<div id='map' style='width: 100%; height: 300px;'></div>
 
 
 <!--Custom JS-->
@@ -39,17 +53,17 @@
 <!--JQuery CDN-->
 
 
-<!--Initial Setup-->
-<!--<script>-->
-<!--mapboxgl.accessToken = MAPBOX_TOKEN;-->
-<!--const map = new mapboxgl.Map({-->
-<!--container: 'map', // container ID-->
-<!--style: 'mapbox://styles/mapbox/streets-v12', // style URL-->
-<!--center: [-74.5, 40], // starting position [lng, lat]-->
-<!--zoom: 9, // starting zoom-->
-<!--});-->
+Initial Setup
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+    });
 
-<!--</script>-->
+</script>
 
 
 </body>

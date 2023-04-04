@@ -94,20 +94,34 @@ Refactor your code to display at least three of your favorite restaurants with i
 */
 
 
-    $(document).ready(function () {
-
-        let marker = new mapboxgl.Marker().setLngLat([-96.889571, 32.892301]).addTo(map);
-
-        (popup).hide();
 
 
-        let popup = new mapboxgl.Popup()
+    let marker = new mapboxgl.Marker().setLngLat([-96.889571, 32.892301]).addTo(map);
+
+
+
+
+    let popup = new mapboxgl.Popup()
             .setLngLat([-96.889571, 32.892301])
             .setHTML("<p>Hyderabadi Biryani & BBQ</p>")
             .addTo(map);
 
 
-    });
+    // adding popup to map
+    // this sets up popup on marker, the popup will only appear when marker is clicked on
+    marker.setPopup(popup);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>

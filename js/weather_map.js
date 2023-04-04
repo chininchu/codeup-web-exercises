@@ -12,7 +12,8 @@ $(document).ready(function () {
         type: "GET",
         data: {
             APPID: OPEN_WEATHER_APPID,
-            q: "Dallas, US"
+            q: "Dallas, US",
+            units: "imperial"
 
         }
     }).done(function (data) {
@@ -24,18 +25,27 @@ $(document).ready(function () {
 
         for (let i = 0; i < data.list.length; i += 8) {
 
-            weather += '<p>'
-            weather += (data.list[i].weather[0].description)
-            weather += (data.list[i].main.humidity)
-            weather += (data.list[i].wind.speed)
-            weather += (data.list[i].main.pressure)
-            weather += '</p>'
+            weather += '<ul class="list-group-flush">'
+            weather += '<li class="list-group-item">' + " " + " " + (data.list[i].dt_txt.slice(0,10)) + "</li>"
+            weather += '<li class="list-group-item">' + " " + " " + (data.list[i].main.temp) + "</li>"
+            weather += '<li class="list-group-item">' + "Description:" + " " + (data.list[i].weather[0].description) + "</li>"
+            weather += '<li class="list-group-item">' +"Humidity:" + " " + (data.list[i].main.humidity) + "</li>"
+            weather += '<li class="list-group-item">' +"Wind:" + " " + (data.list[i].wind.speed) + "</li>"
+            weather += '<li class="list-group-item">' +"Pressure:" + " " + (data.list[i].main.pressure) + "</li>"
+            weather += '</ul>'
 
 
         }
 
+        $('#weather').html(weather);
+
+
+
+
 
     })
+
+
 
 
 });
