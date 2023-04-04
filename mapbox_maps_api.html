@@ -23,7 +23,7 @@
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 50%;
+            width: 100%;
             height: 700px;
         }
     </style>
@@ -56,7 +56,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         zoom: 15, // starting zoom
-        center: [-98.4916, 29.4252] // [lng, lat]
+        center: [-96.889571, 32.892301] // [lng, lat]
     });
 
     //grab the button to say when button is clicked then do xyz
@@ -81,29 +81,36 @@
 
 
     /*
-    Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
-
-
-
+Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
 
 Create a popup with the name of the restaurant.
 
-
 Make sure the info window does not display until the marker has been clicked on.
-
-
 
 
 Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
 
 
-
-
 */
 
-    let marker = new mapboxgl.Marker().set.LngLat([32.892301, -96.889571]).addTo(map);
+
+    $(document).ready(function () {
+
+        let marker = new mapboxgl.Marker().setLngLat([-96.889571, 32.892301]).addTo(map);
+
+        (popup).hide();
+
+
+        let popup = new mapboxgl.Popup()
+            .setLngLat([-96.889571, 32.892301])
+            .setHTML("<p>Hyderabadi Biryani & BBQ</p>")
+            .addTo(map);
+
+
+    });
 
 
 </script>
 </body>
 </html>
+
