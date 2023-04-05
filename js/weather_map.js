@@ -6,7 +6,7 @@ let weather = ""
 
 $(document).ready(function () {
 
-    // Using $Ajax to pull weather conditions in Dallas,TX
+    // Using $Ajax to pull weather conditions in Dallas,TX (i.e static data)
 
 
     $.ajax({
@@ -49,6 +49,9 @@ $(document).ready(function () {
 
 //Add a marker and create a function that allows the user to drag the marker and receive the weather for the particular location
 
+
+    // The map variable initializes the basic configuration for the map
+
     mapboxgl.accessToken = MAPBOX_TOKEN;
     let map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -58,11 +61,12 @@ $(document).ready(function () {
     });
 
 
-// Create a new marker. The marker attempts to change the lat and lng coordinates as it moves from one place to another.
+// Create a new marker. The user attempts to change the lat and lng coordinates based on the marker's placement.
     let marker = new mapboxgl.Marker()
     marker.setLngLat([-96.889571, 32.892301]).addTo(map);
 
 
+    // The event listner contains the $get object which retreives the data for the coordinates
     map.on('click', function (maps) {
 
 
