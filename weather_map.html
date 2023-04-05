@@ -23,6 +23,9 @@
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
 
+    <link rel="stylesheet" href="css/weather_map.css">
+
+
 </head>
 <body>
 <!--<div class="container">-->
@@ -31,19 +34,21 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Weather App</a>
-        <a class="navbar-brand" href="#">Current City: Dallas,TX</a>
+        <a class="navbar-brand" id='location' href="#"></a>
     </div>
-
-
 </nav>
 
+<label for="location">Place</label>
+<input type="search" id="search" name="search">
 
-<p id="weather" class="card flex-row justify-content-between align-items-center mt-auto"></p>
+
+<button class="btn btn-primary" id="button">Find</button>
+
+
+<p id="weather" class=" card d-flex flex-row justify-content-between align-items-center border border-0"></p>
 
 
 <div id='map' style='width: 100%; height: 300px;'></div>
-
-
 
 
 <!--Custom JS-->
@@ -51,9 +56,10 @@
 <script src="js/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossOrigin="anonymous"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/weather_map.js"></script>
-<!--JQuery CDN-->
 
+<!--JQuery CDN-->
 
 
 <script>
