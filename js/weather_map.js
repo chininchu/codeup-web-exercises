@@ -19,23 +19,18 @@ $(document).ready(function () {
             units: "imperial"
 
         }
+        //     The done method attempts to resolve callbacks from the weather API
     }).done(function (data) {
         console.log(data);
 
 
-        // Start from here
-
         for (let i = 0; i < data.list.length; i += 8) {
 
             weather += '<ul class="list-group list-group-flush ">'
-            // weather += '<li class="list-group-item">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</li>"
             weather += '<div class="card-header text-center">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</div>"
-
             weather += '<li class="list-group-item text-center">' + " " + " " + (data.list[i].main.temp + "\u2109") + "</li>"
             weather += '<li class="list-group-item">' + "Description:" + " " + (data.list[i].weather[0].description) + "</li>"
             weather += "<img src='https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png'>"
-
-
             weather += '<li class="list-group-item">' + "Humidity:" + " " + (data.list[i].main.humidity) + "</li>"
             weather += '<li class="list-group-item">' + "Wind:" + " " + (data.list[i].wind.speed) + "</li>"
             weather += '<li class="list-group-item">' + "Pressure:" + " " + (data.list[i].main.pressure) + "</li>"
@@ -63,7 +58,7 @@ $(document).ready(function () {
     });
 
 
-// Create a new marker.
+// Create a new marker. The marker attempts to change the lat and lng coordinates as it moves from one place to another.
     let marker = new mapboxgl.Marker()
     marker.setLngLat([-96.889571, 32.892301]).addTo(map);
 
@@ -77,21 +72,18 @@ $(document).ready(function () {
             lon: maps.lngLat.lng,
             units: "imperial"
         }).done(function (data) {
-            // console.log('5 day forecast', data);
 
 
             weather = ""
 
-            // Start from here
 
             for (let i = 0; i < data.list.length; i += 8) {
 
-                weather += '<ul class="list-group-flush">'
-                weather += '<li class="list-group-item">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</li>"
-                weather += '<li class="list-group-item">' + " " + " " + (data.list[i].main.temp) + "</li>"
+                weather += '<ul class="list-group list-group-flush ">'
+                weather += '<div class="card-header text-center">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</div>"
+                weather += '<li class="list-group-item text-center">' + " " + " " + (data.list[i].main.temp + "\u2109") + "</li>"
                 weather += '<li class="list-group-item">' + "Description:" + " " + (data.list[i].weather[0].description) + "</li>"
                 weather += "<img src='https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png'>"
-
                 weather += '<li class="list-group-item">' + "Humidity:" + " " + (data.list[i].main.humidity) + "</li>"
                 weather += '<li class="list-group-item">' + "Wind:" + " " + (data.list[i].wind.speed) + "</li>"
                 weather += '<li class="list-group-item">' + "Pressure:" + " " + (data.list[i].main.pressure) + "</li>"
@@ -108,6 +100,9 @@ $(document).ready(function () {
 
         marker.setLngLat([maps.lngLat.lng, maps.lngLat.lat]).addTo(map)
     });
+
+
+    // The user is able to change the address on the map by inserting an address within the input field.
 
 
     $('#button').click(function () {
@@ -133,13 +128,11 @@ $(document).ready(function () {
 
                 for (let i = 0; i < data.list.length; i += 8) {
 
-
-                    weather += '<ul class="list-group-flush">'
-                    weather += '<li class="list-group-item">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</li>"
-                    weather += '<li class="list-group-item">' + " " + " " + (data.list[i].main.temp) + "</li>"
+                    weather += '<ul class="list-group list-group-flush ">'
+                    weather += '<div class="card-header text-center">' + " " + " " + (data.list[i].dt_txt.slice(0, 10)) + "</div>"
+                    weather += '<li class="list-group-item text-center">' + " " + " " + (data.list[i].main.temp + "\u2109") + "</li>"
                     weather += '<li class="list-group-item">' + "Description:" + " " + (data.list[i].weather[0].description) + "</li>"
                     weather += "<img src='https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png'>"
-
                     weather += '<li class="list-group-item">' + "Humidity:" + " " + (data.list[i].main.humidity) + "</li>"
                     weather += '<li class="list-group-item">' + "Wind:" + " " + (data.list[i].wind.speed) + "</li>"
                     weather += '<li class="list-group-item">' + "Pressure:" + " " + (data.list[i].main.pressure) + "</li>"

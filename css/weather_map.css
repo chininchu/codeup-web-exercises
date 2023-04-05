@@ -1,22 +1,41 @@
+* {
 
-.navbar{
+    font-family: Arial, sans-serif;
+
+
+}
+
+
+.navbar {
     background-color: blue;
     margin-bottom: 3%
 
 
 }
 
-.navbar-brand{
+.navbar-brand {
     color: white;
 }
 
 
-
-#weather{
-    margin-top: 5%
+#weather {
+    margin-top: 5%;
 
 
 }
+
+img {
+    border-radius: 4px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+
+
 
 
 
