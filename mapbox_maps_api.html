@@ -56,7 +56,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         zoom: 15, // starting zoom
-        center: [-96.889571, 32.892301] // [lng, lat]
+        center: [-96.80302397961503, 32.77862382229249] // [lng, lat]
     });
 
     //grab the button to say when button is clicked then do xyz
@@ -94,26 +94,49 @@ Refactor your code to display at least three of your favorite restaurants with i
 */
 
 
-    let marker = new mapboxgl.Marker().setLngLat([-96.889571, 32.892301]).addTo(map);
-
-
-    let popup = new mapboxgl.Popup()
-        .setLngLat([-96.889571, 32.892301])
-        .setHTML("<p>Hyderabadi Biryani & BBQ</p>")
-        .addTo(map);
-
-    marker.setPopup(popup);
+    // let marker = new mapboxgl.Marker().setLngLat([-96.889571, 32.892301]).addTo(map);
+    //
+    //
+    // let popup = new mapboxgl.Popup()
+    //     .setLngLat([-96.889571, 32.892301])
+    //     .setHTML("<p>Hyderabadi Biryani & BBQ</p>")
+    //     .addTo(map);
+    //
+    // marker.setPopup(popup);
 
 
     let restaurants = [
-
         {
-            Restaurant1: [-96.889571, 32.892301],
-            Restaurant2: [-96.803027, 32.778673],
-            Restaurant3: [-96.808090, 32.814473]
+            name: "Downtown Dallas McDonald's",
+            location: [-96.80302397961503, 32.77862382229249],
+            description: "Sketchy establishment",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4t9-eSMWYVx9EPXsOSLmURQlVsXCDajKFsA&usqp=CAU"
+        },
+        {
+            name: "Twised Trompo",
+            location: [-96.80145290582807, 32.779589505242406],
+            description: "Taco Restaurant",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4t9-eSMWYVx9EPXsOSLmURQlVsXCDajKFsA&usqp=CAU"
+        },
+        {
+            name: "Chick Fil A",
+            location: [-96.80008410527971, 32.78148545176455],
+            description: "Jesus Chicken",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReokvSiyp5IKqCoS0vg6jiNOMe0Tv8WJN5Xg&usqp=CAU"
         }
-
     ]
+
+    restaurants.forEach(function (restaurant) {
+        var popup = new mapboxgl.Popup()
+            .setHTML('<h3>' + restaurant.name + '</h3>' + '<p>' + restaurant.description + '</p>' + '<img src="' + restaurant.image + '">')
+
+        marker = new mapboxgl.Marker()
+            .setLngLat(restaurant.location)
+            .addTo(map)
+            .setPopup(popup);
+
+        popup.addTo(map);
+    })
 
 
 </script>
