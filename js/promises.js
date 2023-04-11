@@ -1,3 +1,14 @@
 "use strict";
 
-fetch(url, {headers: {'Authorization': PROMISE_TOKEN}})
+
+
+fetch('https://api.github.com/events', {headers: {'Authorization': PROMISE_TOKEN}})
+
+
+.then(response => {
+
+    console.log(response.json())
+
+});
+
+
